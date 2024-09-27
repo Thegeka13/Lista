@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Santiago Cardenas">
+    <title>Calendario de Reservas</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link href="Estilos/CalendarioEstilo.css" rel="stylesheet" type="text/css"/>
+    <link href="Estilos/Formulario.css" rel="stylesheet" type="text/css"/>
+    <link href="Estilos/tabla.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="principal">
+  
+    <div class="container">
+             <h2>Registro Periodo</h2>
+    <div class="calendar">
+        <div class="calendar-header">
+            <button id="prevBtn" class="calendar-btn"><i class="fas fa-angle-left"></i></button>
+            <h2 id="currentMonth"></h2>
+            <button id="nextBtn" class="calendar-btn"><i class="fas fa-angle-right"></i></button>
+        </div>
+        <div id="calendarBody" class="calendar-body"></div>
+    </div>
+             
+        <h2>Registro de Horas de Trabajo</h2>
+        <form action="/submit-horas-trabajo" method="post">
+            <label for="lunes">Lunes:</label>
+            <input type="text" id="lunes" name="lunes" placeholder="Ej.8hrs" required>
+            
+            <label for="martes">Martes:</label>
+            <input type="text" id="martes" name="martes" placeholder="Ej.8hrs" required>
+            
+            <label for="miercoles">Miércoles:</label>
+            <input type="text" id="miercoles" name="miercoles" placeholder="Ej.8hrs" required>
+            
+            <label for="jueves">Jueves:</label>
+            <input type="text" id="jueves" name="jueves" placeholder="Ej.8hrs" required>
+            
+            <label for="viernes">Viernes:</label>
+            <input type="text" id="viernes" name="viernes" placeholder="Ej.8hrs" required>
+            
+            <label for="sabado">Sábado:</label>
+            <input type="text" id="sabado" name="sabado" placeholder="Ej.8hrs" required>
+        </form>
+
+        <h2>Registrar Días Festivos</h2>
+        <form action="/submit-dias-festivos" method="post">
+            <label for="dia-festivo">Días Festivos:</label>
+            <input type="text" id="dia-festivo" name="dia-festivo" placeholder="Ej.8 dias" required>
+        </form>
+        
+        <h2>Registro de Fechas Vacacionales</h2>
+        <form action="/submit-fecha-vacacional" method="post">
+            <label for="inicio-vacaciones">Fecha de Inicio de Vacaciones:</label>
+            <input type="text" id="inicio-vacaciones" name="inicio-vacaciones" placeholder="Ej. 1/9/2024-11/9/2024" required>
+            <input type="submit" value="Guardar">
+    </div>
+    <!-- Tabla provisional -->
+   <table id="selectedDatesTable" border="1">
+    <thead>
+        <tr>
+                   <th>Periodo</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miercoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sabado</th>
+                    <th>No.Días Festivos</th>
+                    <th>Periodo Vacacional</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="idPeriodo">-</td>
+            <td id="lunes">-</td>
+            <td id="martes">-</td>
+            <td id="miercoles">-</td>
+            <td id="jueves">-</td>
+            <td id="viernes">-</td>
+            <td id="sabado">-</td>
+            <td id="dia-festivo">-</td>
+            <td id="inicio-vacaciones">-</td>
+        </tr>
+    </tbody>
+</table>
+
+
+    
+    </div>
+</body>
+<script src="js/Calendario.js" type="text/javascript"></script>
+</html>
