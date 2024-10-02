@@ -1,0 +1,180 @@
+/* General Body Styles */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .principal {
+      display: flex;
+      justify-content: space-between; /* Esto asegura que el calendario y los formularios estén lado a lado */
+      align-items: flex-start;
+      gap: 20px;
+      background-color: aliceblue;
+  }
+  
+  /* Nueva clase para alinear los formularios en una fila */
+  .form-section {
+      display: flex;
+      justify-content: space-between; /* Ajusta los formularios para que estén alineados horizontalmente */
+      gap: 20px;
+  }
+  
+  /* Container Style */
+/* Container Style */
+.container {
+    width: 100%; /* Asegura que cada formulario tenga el mismo tamaño */
+    display: flex;
+    flex-direction: column; /* Asegura disposición vertical */
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.parciales-container {
+    display: flex;
+    flex-direction: column; /* Asegura que todos los parciales estén en una columna */
+    gap: 20px; /* Espacio entre parciales */
+}
+
+.parciales {
+    width: 100%; /* Asegura que cada parcial tenga el mismo tamaño */
+    display: flex;
+    flex-direction: column; /* Asegura que cada elemento dentro de parciales esté en vertical */
+}
+.parciales-btn{
+    margin-top: 10px;
+}
+.periodo-btn{
+    
+}
+
+
+  /* Form Styles */
+  form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"],
+  input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  label {
+    font-weight: bold;
+    align-self: center;
+  }
+  
+  input[type="submit"] {
+    grid-column: span 2;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .calendar-day.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+  /* Calendar Styles */
+  #calendarContainer {
+    display: none;
+}
+  .calendar {
+    /* width: %; */
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 10px 29px -7px rgba(63, 63, 63, 0.48);
+  }
+  
+  .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .calendar-header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .calendar-day {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+  
+  .calendar-day:hover {
+    background-color: #ddd !important;
+    transition: background-color 0.3s ease;
+  }
+  
+  .calendar-day.selected {
+    background-color: blue; /* Color para el rango seleccionado del periodo */
+    color: white;
+}
+
+.calendar-day.range {
+    background-color: lightblue; /* Color para el rango de fechas del periodo */
+}
+
+.calendar-day.parcial-selected {
+    background-color: green; /* Color para el rango seleccionado de parciales */
+    color: white;
+}
+
+.calendar-day.parcial-range {
+    background-color: lightgreen; /* Color para el rango de fechas de los parciales */
+}
+  
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
